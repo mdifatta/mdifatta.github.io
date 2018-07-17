@@ -37,7 +37,7 @@
            <p>Leave a nick if you wish to be mentioned in our project's paper. Otherwise leave the field empty and go on.</p>
            <label>Nick:</label>
            <input type="text" name="nick" id="nickname"/><br><br>
-           <input class="btn btn-primary btn-lg" type="submit" value="Get a new sample &raquo;" id="submit"/>
+           <input class="btn btn-primary btn-lg" type="submit" value="Proceed &raquo;" id="submit"/>
          </div>
        </div>
 
@@ -45,7 +45,7 @@
            let nick_field = document.getElementById("nickname");
            let submit_btn = document.getElementById("submit");
 
-           let site = "prepare_data.php?nick=";
+           let site = "thanks.php";
 
            submit_btn.onclick = () => location.href = site + nick_field.value;
        </script>
