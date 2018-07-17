@@ -35,17 +35,16 @@
            <p>Your help was precious.</p>
            <p> Machine learning needs a huge amount of data, so now you can get another sample, if you want, or just leave the page. ;)</p>
            <p>
-               <button class="btn btn-primary btn-lg" role="button" id="get_data">Get a new sample &raquo;</button>
+               <button class="btn btn-primary btn-lg" role="button" id="get_data">Go back to homepage &raquo;</button>
            </p>
              <script>
                  let button = document.getElementById("get_data");
                  let url = new URL(window.location.href);
                  let nick = url.searchParams.get("nick");
 
-                 let new_url = "prepare_data.php?nick=" + nick;
+                 let new_url = "index.html" + nick;
 
-                 <!-- button.onclick = () => location.href = new_url; -->
-                 <!-- commented to disable the button -->
+                 button.onclick = () => location.href = new_url;
              </script>
          </div>
        </div>
@@ -61,30 +60,30 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <p class="lead" id="first_contributors">
-                                            lella 0500<br/>
-                                            mikiberto23 0251<br/>
-                                            Dondoo 0250<br/>
-                                            tia 0206<br/>
-                                            cavalli1234 0202<br/>
-                                            dan 0170<br/>
-                                            Rita 0136<br/>
-                                            matteobias 0134<br/>
-                                            giiooo17 0116<br/>
-                                            elise 0095<br/>
+                                            lella 2004<br/>
+                                            mikiberto23 269<br/>
+                                            Dondoo 250<br/>
+                                            tia 213<br/>
+                                            cavalli1234 202<br/>
+                                            dan 197<br/>
+                                            Rita 136<br/>
+                                            matteobias 135<br/>
+                                            giiooo17 116<br/>
+                                            elise 95<br/>
                                         </p>
                                     </div>
                                     <div class="col-md-6">
                                         <p class="lead" id="second_contributors">
-                                            Gianpy15 0088<br/>
-                                            SugarHands 0054<br/>
-                                            peppeborgia 0028<br/>
-                                            Deccio 0021<br/>
-                                            Anonymous 0020<br/>
-                                            MrFoxNos 0015<br/>
-                                            Chiara 0015<br/>
-                                            Gabbo 0010<br/>
-                                            Giulia 0005<br/>
-                                            NotSwarley 0005<br/>
+                                            Gianpy15 93<br/>
+                                            Mirko 60<br/>
+                                            Milly 56<br/>
+                                            SugarHands 54<br/>
+                                            peppeborgia 28<br/>
+                                            GiovanniDP 27<br/>
+                                            Deccio 21<br/>
+                                            MrFoxNos 15<br/>
+                                            Chiara 15<br/>
+                                            MrFoxNos 15<br/>
                                         </p>
                                     </div>
                                 </div>
