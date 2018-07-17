@@ -1,7 +1,119 @@
-<!DOCTYPE html>
 <html>
-	<body>
-		<h1>Hello World</h1>
-		<p>I'm hosted with GitHub Pages.</p>
-	</body>
+   <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <title>Hand Tracking: welcome</title>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+   </head>
+   <body>
+       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+         <a class="navbar-brand" href="#">HandTracking</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+           <ul class="navbar-nav mr-auto">
+             <li class="nav-item active">
+               <a class="nav-link" href="file:///Users/mattiadifatta/Desktop/web/index.html">Home <span class="sr-only">(current)</span></a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#learn_more">Learn More</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#about_us">About us</a>
+             </li>
+           </ul>
+         </div>
+       </nav>
+
+       <div class="jumbotron">
+         <div class="container">
+           <h1 class="display-3">Hand Tracking: a deep learning project</h1>
+           <p>Our objective is to train a deep neural network able to recognize hands' movement and provide a real time 3D recostruction of it.</p>
+           <p>For more information click on 'Learn more' in the navigation bar above.</p>
+           <p>In every machine learning project data are a core component, so this website was designed with the purpose to collect as many data as possible.</p>
+           <p>In the next page you will be asked to arrange a set of points on a picture representing one or more hands in order to create a skeleton of their juctions (more details will be provided to you later on).</p>
+           <hr class="my-4">
+           <p>Leave a nick if you wish to be mentioned in our project's paper. Otherwise leave the field empty and go on.</p>
+           <label>Nick:</label>
+           <input type="text" name="nick" id="nickname"/><br><br>
+           <input class="btn btn-primary btn-lg" type="submit" value="Get a new sample &raquo;" id="submit"/>
+         </div>
+       </div>
+
+       <script>
+           let nick_field = document.getElementById("nickname");
+           let submit_btn = document.getElementById("submit");
+
+           let site = "prepare_data.php?nick=";
+
+           submit_btn.onclick = () => location.href = site + nick_field.value;
+       </script>
+
+       <div class="container">
+           <div class="col-md-12">
+               <a name="learn_more"></a>
+               <hr class="featurette-divider">
+
+                <div class="row featurette">
+                  <div class="col-md-7">
+                    <h2 class="featurette-heading">Acquire data. <span class="text-muted">A lot of data.</span></h2>
+                    <p class="lead">The first step of each machine learning project is to find a data set.
+                        This is the aim of this website: we shot several videos with a special camera in order to have many frames
+                        (i.e. the pictures proposed in this website) to be labeled. In our case the labels are all the junctions of the hand(s)
+                        showed in the pictures. These are required in order to train our deep neural network.</p>
+                  </div>
+                  <div class="col-md-5">
+                      <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="images/labels.gif">
+                  </div>
+                </div>
+
+                <hr class="featurette-divider">
+
+                <div class="row featurette">
+                  <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading">Find hand(s) in a picture. <span class="text-muted">Bounding boxes.</span></h2>
+                    <p class="lead">To train the neural network we need to focus the attention on the area of each picture where hands are present.
+                        So we need to compute the bounding box of each sample picture.</p>
+                  </div>
+                  <div class="col-md-5 order-md-1">
+                    <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="images/heatmaps.png">
+                  </div>
+                </div>
+
+                <hr class="featurette-divider">
+
+                <div class="row featurette">
+                  <div class="col-md-7">
+                    <h2 class="featurette-heading">The (pure) deep learning step. <span class="text-muted">Training and prediction.</span></h2>
+                    <p class="lead">Finally we can train our neural network with the huge amount of data collected thanks to this website.</p>
+                  </div>
+                  <div class="col-md-5">
+                    <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="images/cnn2.png">
+                  </div>
+                </div>
+
+                <hr class="featurette-divider">
+
+                <div class="row featurette">
+                  <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading">The recostruction. <span class="text-muted"></span></h2>
+                    <p class="lead">In the final step we plan to show a 3D real-time reconstruction of hands movement.</p>
+                  </div>
+                  <div class="col-md-5 order-md-1">
+                    <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="images/adam_sample.gif">
+                  </div>
+                </div>
+
+                <hr class="featurette-divider">
+           </div>
+
+                <footer class="container text-center">
+                    <a name="about_us"></a>
+                        <h3>About us</h3>
+                        <p>We are Computer Science students at Politecnico di Milano (&hearts;) working on this project for a Deep Learning course.</p>
+                        <p>Luca Cavalli, Gianpaolo Di Pietro, Michele Bertoni, Matteo Biasielli, Mattia Di Fatta</p>
+                </footer>
+       </div>
+   </body>
 </html>
